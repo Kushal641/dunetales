@@ -15,7 +15,7 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css?v=ff7f00">
 
   <!-- 
     - google font link
@@ -25,6 +25,210 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto:wght@300;400;500;700&family=Oswald:wght@600&family=Caveat:wght@500;700&display=swap"
     rel="stylesheet">
+
+  <style>
+    /* Continues the warm off-white band started by the What We Do section,
+       so the light middle of the page reads as one zone. The dotted dune
+       silhouette matches the halftone world map behind What We Do. */
+    .team-founders {
+      background-color: var(--baby-powder);
+      background-image:
+        url('./assets/images/founders-dunes-top.svg'),
+        url('./assets/images/founders-dunes.svg');
+      background-repeat: no-repeat, no-repeat;
+      background-position: center top, center bottom;
+      background-size: 100% auto, 100% auto;
+    }
+
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-block-start: 40px;
+      max-width: 700px;
+      align-items: stretch;
+    }
+
+    .founder-card {
+      background-color: var(--white);
+      box-shadow: var(--card-shadow);
+      outline: 3px solid transparent;
+      transition: outline-color var(--transition-2), transform var(--transition-2), box-shadow var(--transition-2);
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      width: 100%;
+    }
+
+    .founder-card:hover {
+      outline-color: var(--pistachio);
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .founder-photo-placeholder {
+      width: 100%;
+      height: 380px;
+      background-color: var(--eerie-black-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .founder-photo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .founder-photo-placeholder img.founder-photo--vivan {
+      object-position: center 25%;
+    }
+
+    .founder-initials {
+      font-family: var(--ff-oswald);
+      font-size: 6rem;
+      color: hsla(0, 0%, 100%, 0.1);
+    }
+
+    .founder-card-body {
+      padding: 18px 20px 22px;
+    }
+
+    .founder-role-badge {
+      display: inline-block;
+      background-color: var(--amber-glow);
+      color: var(--accent-deep);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      padding: 5px 14px;
+      margin-block-end: 14px;
+    }
+
+    .founder-name {
+      margin-block: 8px;
+    }
+
+    .founder-bio {
+      color: var(--granite-gray);
+      font-family: var(--ff-inter);
+      font-size: 1.4rem;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .team-grid-section {
+      background-color: var(--baby-powder);
+    }
+
+    .team-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-block-start: 40px;
+    }
+
+
+    .team-card {
+      background-color: var(--white);
+      box-shadow: var(--card-shadow);
+      outline: 3px solid transparent;
+      transition: outline-color var(--transition-2), transform var(--transition-2), box-shadow var(--transition-2);
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .team-card:hover {
+      outline-color: var(--pistachio);
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .team-card-photo {
+      width: 100%;
+      aspect-ratio: 4 / 3.5;
+      background-color: var(--eerie-black-2);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .team-initials {
+      font-family: var(--ff-oswald);
+      font-size: 6rem;
+      font-weight: 600;
+      color: hsla(0, 0%, 100%, 0.12);
+    }
+
+    .team-card-accent-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background-color: var(--pistachio);
+    }
+
+    .team-card-body {
+      padding: 16px 18px 20px;
+    }
+
+    .team-card-role {
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent-deep);
+      display: block;
+      margin-block-end: 6px;
+    }
+
+    .team-card-name {
+      font-size: 2rem;
+      margin-block: 4px 10px;
+    }
+
+    .team-card-text {
+      font-family: var(--ff-inter);
+      font-size: 1.4rem;
+      line-height: 1.75;
+      color: var(--granite-gray);
+      margin: 0;
+    }
+
+
+    @media (max-width: 900px) {
+      .founders-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .team-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .founders-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .team-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -79,7 +283,7 @@
           </li>
 
           <li class="desktop-only">
-            <a href="/team" class="navbar-link">
+            <a href="/#team" class="navbar-link">
               <span>Our Team</span>
               <ion-icon name="chevron-forward-outline" aria-hidden="true"></ion-icon>
             </a>
@@ -143,7 +347,7 @@
 
           <ul class="features-list">
 
-            <li class="features-item">
+            <li class="features-item" data-reveal>
               <div class="item-icon">
                 <ion-icon name="mic-outline"></ion-icon>
               </div>
@@ -157,7 +361,7 @@
               </div>
             </li>
 
-            <li class="features-item">
+            <li class="features-item" data-reveal style="--reveal-delay: 0.08s;">
               <div class="item-icon">
                 <ion-icon name="heart-outline"></ion-icon>
               </div>
@@ -171,7 +375,7 @@
               </div>
             </li>
 
-            <li class="features-item">
+            <li class="features-item" data-reveal style="--reveal-delay: 0.16s;">
               <div class="item-icon">
                 <ion-icon name="people-outline"></ion-icon>
               </div>
@@ -185,7 +389,7 @@
               </div>
             </li>
 
-            <li class="features-item">
+            <li class="features-item" data-reveal style="--reveal-delay: 0.24s;">
               <div class="item-icon">
                 <ion-icon name="book-outline"></ion-icon>
               </div>
@@ -215,7 +419,7 @@
       <section class="section about" id="about">
         <div class="container">
 
-          <div class="about-banner">
+          <div class="about-banner" data-reveal>
 
             <h2 class="deco-title">About Us</h2>
 
@@ -243,7 +447,7 @@
 
           </div>
 
-          <div class="about-content">
+          <div class="about-content" data-reveal style="--reveal-delay: 0.1s;">
 
             <p class="section-subtitle">
               <span>Why DuneTales</span>
@@ -439,7 +643,7 @@
       -->
 
       <section class="press-strip">
-        <div class="container">
+        <div class="container" data-reveal>
           <p class="press-strip__eyebrow">Featured in</p>
           <div class="press-strip__logos">
             <a class="press-strip__logo" href="https://gulfnews.com/uae/people/how-growing-up-in-the-uae-shaped-pride-purpose-for-these-indian-students-1.500576929" target="_blank" rel="noopener" aria-label="Read the Gulf News article about DuneTales (opens in a new tab)">
@@ -463,7 +667,7 @@
       <section class="section cta">
         <div class="container">
 
-          <div class="cta-content">
+          <div class="cta-content" data-reveal>
             <h2 class="h2 section-title">Help Us Amplify More Voices</h2>
 
             <a href="mailto:dunetalesdubai@gmail.com" class="btn btn-outline">
@@ -473,7 +677,7 @@
             </a>
           </div>
 
-          <figure class="cta-banner">
+          <figure class="cta-banner" data-reveal style="--reveal-delay: 0.1s;">
             <img src="./assets/images/cta-banner.jpg" width="520" height="228" loading="lazy" alt="Volunteers supporting migrant worker communities"
               class="img-cover">
           </figure>
@@ -489,7 +693,8 @@
         - #SERVICE
       -->
 
-      <section class="section service" id="service" style="background-image: url('./assets/images/service-map.png')">
+      <section class="section service" id="service"
+        style="background-image: url('./assets/images/service-map.png'), url('./assets/images/dunes-service-bottom.svg'); background-position: center top, center bottom; background-repeat: no-repeat, no-repeat; background-size: auto, 100% auto;">
         <div class="container">
 
           <p class="section-subtitle">
@@ -502,7 +707,7 @@
 
           <ul class="service-list">
 
-            <li>
+            <li data-reveal>
               <div class="service-card">
 
                 <div class="card-icon">
@@ -518,7 +723,7 @@
               </div>
             </li>
 
-            <li>
+            <li data-reveal style="--reveal-delay: 0.08s;">
               <div class="service-card">
 
                 <div class="card-icon">
@@ -534,7 +739,7 @@
               </div>
             </li>
 
-            <li>
+            <li data-reveal style="--reveal-delay: 0.16s;">
               <div class="service-card">
 
                 <div class="card-icon">
@@ -550,7 +755,7 @@
               </div>
             </li>
 
-            <li>
+            <li data-reveal style="--reveal-delay: 0.24s;">
               <div class="service-card">
 
                 <div class="card-icon">
@@ -572,6 +777,166 @@
       </section>
 
 
+
+
+
+      <!--
+        - #TEAM
+      -->
+
+      <section class="section team-founders" id="team">
+        <div class="container">
+
+          <p class="section-subtitle">
+            <span>Founders</span>
+          </p>
+          <h2 class="h2 section-title">The People Who <strong>Started It All</strong></h2>
+
+          <div class="founders-grid" data-reveal>
+
+            <a class="founder-card" href="https://www.linkedin.com/in/kushal-pagarani-333874226/" target="_blank" rel="noopener">
+              <div class="founder-photo-placeholder">
+                <img src="./assets/images/kushal.png" alt="Kushal Pagarani">
+              </div>
+              <div class="founder-card-body">
+                <span class="founder-role-badge">Co-Founder</span>
+                <h3 class="h3 founder-name">Kushal Pagarani</h3>
+                <p class="founder-bio">Connect with Kushal on LinkedIn.</p>
+              </div>
+            </a>
+
+            <a class="founder-card" href="https://www.linkedin.com/in/vivanpanda/" target="_blank" rel="noopener">
+              <div class="founder-photo-placeholder">
+                <img src="./assets/images/vivan.png" alt="Vivan Panda" class="founder-photo--vivan">
+              </div>
+              <div class="founder-card-body">
+                <span class="founder-role-badge">Co-Founder</span>
+                <h3 class="h3 founder-name">Vivan Panda</h3>
+                <p class="founder-bio">Connect with Vivan on LinkedIn.</p>
+              </div>
+            </a>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Real team members to be added here.
+      <section class="section team-grid-section">
+        <div class="container">
+
+          <p class="section-subtitle">
+            <span>The Full Team</span>
+          </p>
+          <h2 class="h2 section-title">The People Who <strong>Make It Happen</strong></h2>
+
+          <ul class="team-list">
+
+            <li>
+              <div class="team-card">
+                <div class="team-card-photo">
+                  <div class="team-initials" aria-hidden="true">S</div>
+                  <div class="team-card-accent-bar" aria-hidden="true"></div>
+                </div>
+                <div class="team-card-body">
+                  <span class="team-card-role">Editor &amp; Translator</span>
+                  <h3 class="h3 team-card-name">Sara [Surname]</h3>
+                  <p class="team-card-text">
+                    Translates and shapes raw recordings into stories that
+                    travel across languages without losing their heart.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="team-card">
+                <div class="team-card-photo">
+                  <div class="team-initials" aria-hidden="true">A</div>
+                  <div class="team-card-accent-bar" aria-hidden="true"></div>
+                </div>
+                <div class="team-card-body">
+                  <span class="team-card-role">Field Interviewer</span>
+                  <h3 class="h3 team-card-name">Ahmad [Surname]</h3>
+                  <p class="team-card-text">
+                    Meets workers where they are and helps them feel safe enough
+                    to share their stories on their own terms.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="team-card">
+                <div class="team-card-photo">
+                  <div class="team-initials" aria-hidden="true">L</div>
+                  <div class="team-card-accent-bar" aria-hidden="true"></div>
+                </div>
+                <div class="team-card-body">
+                  <span class="team-card-role">Digital &amp; Web</span>
+                  <h3 class="h3 team-card-name">Lena [Surname]</h3>
+                  <p class="team-card-text">
+                    Keeps DuneTales accessible online, making sure every story is
+                    easy to find, read, and listen to.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="team-card">
+                <div class="team-card-photo">
+                  <div class="team-initials" aria-hidden="true">A</div>
+                  <div class="team-card-accent-bar" aria-hidden="true"></div>
+                </div>
+                <div class="team-card-body">
+                  <span class="team-card-role">Audio Producer</span>
+                  <h3 class="h3 team-card-name">[Name]</h3>
+                  <p class="team-card-text">
+                    Cleans and edits interviews so every voice sounds clear,
+                    respectful, and true to the moment.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="team-card">
+                <div class="team-card-photo">
+                  <div class="team-initials" aria-hidden="true">C</div>
+                  <div class="team-card-accent-bar" aria-hidden="true"></div>
+                </div>
+                <div class="team-card-body">
+                  <span class="team-card-role">Community Outreach</span>
+                  <h3 class="h3 team-card-name">[Name]</h3>
+                  <p class="team-card-text">
+                    Builds relationships with worker communities and partners so
+                    new voices can be heard with care.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="team-card">
+                <div class="team-card-photo">
+                  <div class="team-initials" aria-hidden="true">?</div>
+                  <div class="team-card-accent-bar" aria-hidden="true"></div>
+                </div>
+                <div class="team-card-body">
+                  <span class="team-card-role">Coming Soon</span>
+                  <h3 class="h3 team-card-name">[Name]</h3>
+                  <p class="team-card-text">
+                    This team member's profile will be added shortly.
+                  </p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+      -->
 
     </article>
   </main>
@@ -605,7 +970,7 @@
         <h3 class="footer__col-title">Quick Links</h3>
         <ul class="footer-list">
           <li><a href="/" class="footer-link">Home</a></li>
-          <li><a href="/team" class="footer-link">Our Team</a></li>
+          <li><a href="/#team" class="footer-link">Our Team</a></li>
           <li><a href="/stories" class="footer-link">Stories</a></li>
           <li><a href="/#about" class="footer-link">About</a></li>
 
@@ -637,7 +1002,28 @@
   -->
   <script src="./assets/js/script.js"></script>
 
-  <!-- 
+  <script>
+    /* Shared scroll reveal. The hidden state only applies under
+       .reveal-ready, so nothing disappears if this script fails. */
+    const revealEls = document.querySelectorAll('[data-reveal]');
+
+    if (revealEls.length > 0 && 'IntersectionObserver' in window) {
+      document.documentElement.classList.add('reveal-ready');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -40px' });
+
+      revealEls.forEach((el) => observer.observe(el));
+    }
+  </script>
+
+  <!--
     - ionicon link
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

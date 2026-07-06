@@ -1,14 +1,14 @@
 /* DuneTales Stories + Story pages
    Uses the main template variables from assets/css/style.css.
-   Brand colour: warm desert-amber hsl(32, 90%, 52%) */
+   Brand colour: favicon orange hsl(30, 100%, 50%), via --pistachio */
 
 :root {
   --dt-bg: var(--baby-powder, hsl(30, 50%, 97%));
   --dt-surface: var(--white, #ffffff);
   --dt-ink: var(--eerie-black-2, #262626);
   --dt-muted: var(--sonic-silver, #777);
-  --dt-brand: hsl(32, 90%, 52%);
-  --dt-brand-50: hsla(32, 90%, 52%, 0.5);
+  --dt-brand: var(--pistachio, hsl(30, 100%, 50%));
+  --dt-brand-50: var(--pistachio_50, hsla(30, 100%, 50%, 0.5));
   --dt-border: var(--platinum, #e8e8e8);
   --dt-shadow: 0 10px 30px rgba(0,0,0,.12);
   --dt-radius: 14px;
@@ -203,7 +203,7 @@ a.polaroid:focus-visible .polaroid__frame {
 .polaroid__photo {
   height: 240px;
   border-radius: 8px;
-  background: linear-gradient(135deg, hsla(32, 90%, 52%, .22), hsla(32, 80%, 60%, .16));
+  background: linear-gradient(135deg, hsla(30, 100%, 50%, .22), hsla(30, 90%, 58%, .16));
   display: grid;
   place-items: center;
   color: rgba(0,0,0,.6);
@@ -447,7 +447,7 @@ a.polaroid:focus-within .polaroid__read {
   font-family: 'Caveat', cursive;
   font-size: 2.4rem;
   font-style: italic;
-  color: hsl(32, 60%, 38%);
+  color: var(--dt-brand);
   line-height: 1.4;
 }
 
@@ -495,8 +495,8 @@ html[data-theme="dark"] body {
   --dt-muted: rgba(255,255,255,.68);
   --dt-border: rgba(255,255,255,.12);
   background:
-    radial-gradient(1000px 600px at 15% -10%, hsla(32, 90%, 52%, .14), transparent 55%),
-    radial-gradient(800px 500px at 90% 10%, hsla(32, 80%, 60%, .10), transparent 50%),
+    radial-gradient(1000px 600px at 15% -10%, hsla(30, 100%, 50%, .14), transparent 55%),
+    radial-gradient(800px 500px at 90% 10%, hsla(30, 90%, 58%, .10), transparent 50%),
     var(--dt-bg);
 }
 
@@ -533,7 +533,7 @@ html[data-theme="dark"] .filter-pill.active {
 }
 
 html[data-theme="dark"] .article blockquote {
-  color: hsl(32, 70%, 65%);
+  color: var(--dt-brand);
 }
 
 html[data-theme="dark"] .polaroid--empty .polaroid__frame {
