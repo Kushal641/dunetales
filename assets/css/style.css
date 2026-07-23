@@ -1749,13 +1749,15 @@ body {
 }
 .press-strip__logo:is(:hover, :focus) { opacity: 1; }
 .press-strip__logo img { height: 48px; width: auto; display: block; }
-.press-strip__logo:last-of-type img { height: 42px; }
+.press-strip__logo--pulse img { height: 42px; }
+.press-strip__logo--dubai-eye img { height: 60px; }
 .press-strip__dot {
   width: 6px; height: 6px; border-radius: 50%;
   background: var(--pistachio); display: inline-block;
 }
 @media (max-width: 575px) {
   .press-strip__logo img,
-  .press-strip__logo:last-of-type img { height: 34px; }
+  .press-strip__logo--pulse img { height: 34px; }
+  .press-strip__logo--dubai-eye img { height: 44px; }
   .press-strip__logos { gap: 36px; }
 }
